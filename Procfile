@@ -1,0 +1,1 @@
+web: sh ./heroku-start-script.sh
