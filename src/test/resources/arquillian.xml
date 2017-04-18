@@ -5,7 +5,7 @@
         <configuration>
             <property name="user">${tomcat.user}</property>
             <property name="pass">${tomcat.password}</property>
-            <property name="bindHttpPort">8080</property>           
+            <property name="bindHttpPort">${http.port}</property>
             <property name="bindAddress">localhost</property>
             <property name="catalinaHome">${catalina.home}</property>
             <property name="unpackArchive">true</property>
