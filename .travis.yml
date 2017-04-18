@@ -1,0 +1,17 @@
+language: java
+jdk:
+  - oraclejdk8
+sudo: false
+script:
+#Run tests using a managed tomcat server downloaded at build time
+  - mvn -Parq-tomcat-managed test
+deploy:
+  provider: heroku
+  api_key:
+    secure: MNu0YQ1vtBZmVnNhpUetcqAONBTiB2loWK72jcFnktEsdY4PHs/hJ2JvCFc+xJqcTse0v2d1CSr9g134x2afK+gcsnMbeWfdum8CzYtsKVQhjJ5xhVY9hPIslbMFCVibOpcVrCkIeCnit2OsxzXf8JatVWvlJkZ8j+ojiLrzWNw1EYJxUpmVeME2APW0+2fNqdw97RM57HkzoCq1J7T5fGZoJvrF+nsakcPY2EM090SMOTXckK/5OpZugpUB6GEUXpdE8ccpWT4RknHZFKtkGZ0oYKSbBFXHcJoZp0F/fm6EmA+C3nCXLerTo4uJb+Fht4AuwYsMJSiEY1elusB3oZJOCALM37PlQ3R0ABm8+fkmtyO6fJJSnBpim8y3FEY5iR0r65PVysf1HaAz7wSK3URiuLADaKyjGMyZoB0Cgt9vR9KQ4jYjUjnrpOV6oDTn5bLlpkDovHllMFkhIw6BL7nD+8/l2MjeUnjrqL0JxWMNc2hLWPUXlAy3oOI0DQdfXPOnD5XK2smUgEjhFMTuhu4n5i05dl0V9/rQ1dSUDI3pONuTLSu/oNMicyJDdjdrq10dEoG9GdRyC4P0V1aU3XYw3yEa6PYRHamgyoxziuFetxMjYt+BIQK9oiOiMpY9MiShqDUJhzGkmOqYveOFdsLan38HpuevtA6SFd6gEr4=
+  app: 
+    master: java-tomcat-ci-dev
+    production: java-tomcat-ci-prod
+  on:
+    repo: megakoresh/java-tomcat-ci
+  

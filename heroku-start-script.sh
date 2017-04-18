@@ -10,6 +10,7 @@ export CATALINA_BASE
 chmod a+x ./target/apache-tomcat-*/bin/*.sh
 
 #heroku randomly generates a port to which app must bind, we need to access it via this $PORT variable
+#if you use persistence you will also require database connection url, which you must put into a environment var on heroku and reference here
 JAVA_OPTS="$JAVA_OPTS -Dhttp.port=$PORT -Dhibernate.connection.url=$DATABASE_URL"
 export JAVA_OPTS
 

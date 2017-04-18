@@ -235,6 +235,8 @@
                                             <directory>src/main/resources</directory>
                                             <includes>
                                                 <include>tomcat-users.xml</include>
+                                                <!--<include>persistence.xml</include>-->
+                                                <include>server.xml</include>
                                             </includes>
                                             <filtering>true</filtering>
                                         </resource>
