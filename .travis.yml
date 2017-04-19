@@ -4,7 +4,7 @@ jdk:
 sudo: false
 script:
 #Run tests using a managed tomcat server downloaded at build time
-  - mvn -Parq-tomcat-managed test -define http.port=8080
+  - mvn clean -Parq-tomcat-managed test -define http.port=8080
 deploy:
   provider: heroku
   api_key:
